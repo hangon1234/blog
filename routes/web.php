@@ -21,3 +21,6 @@ Route::get("/project", 'HomeController@project');
 Route::post("/contact/submit", "HomeController@submit");
 
 Auth::routes();
+
+Route::get("/admin", "AdminController@index");
+Route::get("/contact/delete/{contact}", "AdminController@deleteContact");

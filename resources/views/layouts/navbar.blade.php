@@ -28,7 +28,18 @@
         <li class="nav-item active">
             <a href="{{url('/album')}}" class="nav-link">Album</a>
         </li>
+        @if(Auth::check())
+        <li class="nav-item active">
+            <a href="{{url('/admin')}}" class="nav-link">Admin</a>
+        </li>
+        @endif
       </ul>
+      @if(Auth::check())
+      <form class="form-inline my-2 my-lg-0" method="post" action="{{route('logout')}}">
+        {{csrf_field()}}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+      </form>
+      @endif
     </div>
   </div>
 </nav>
